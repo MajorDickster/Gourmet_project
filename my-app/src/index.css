@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@import "tailwindcss";
+
+/* Custom properties and base styles */
+@theme {
+  --color-primary: #b5a926;
+  --color-text: #ffffff;
+  --color-text-dark: #1f2937;
+}
+
+/* Base styles */
+body {
+  @apply min-h-screen w-full;
+  color: theme(--color-text);
+  background: linear-gradient(to bottom right, #4b0082, #FFD700); /* royal purple to gold */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.font-sevillana {
+  font-family: 'Sevillana', cursive;
+}
+
+label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+/* Component styles */
+a {
+  @apply transition text-blue-600 hover:text-blue-800;
+}
+
+/* Make buttons gold with black text */
+button {
+  @apply rounded-lg font-medium transition duration-300;
+  background-color: theme(--color-primary);
+  color: black;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  background-color: #e6c200;
+}
+
+/* Inputs */
+input {
+  @apply w-full border rounded-lg transition;
+  padding: 0.5rem 1rem;
+  border-color: #d1d5db;
+  background-color: white;
+  color: black;
+}
+
+/* Fix invisible placeholder issue */
+input::placeholder {
+  color: #6b7280; /* Tailwind gray-500 */
+  opacity: 1; /* ensure it’s not transparent */
+}
+
+input:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px theme(--color-primary);
+}
